@@ -1,6 +1,8 @@
 def timeit(func):
+    import functools
     import time
-    
+
+    @functools.wraps(func)
     def wrapper(*args, **kwargs):
         print('Start execution')
         start = time.time()
